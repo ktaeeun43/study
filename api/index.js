@@ -1,19 +1,16 @@
-import express from "express";
+const express = require("express");
 const app = express();
 
-import authRoutes from "./routes/auth.js"
-import userRoutes from "./routes/users.js"
-import postRoutes from "./routes/posts.js"
-import commentRoutes from "./routes/comments.js"
-import likeRoutes from "./routes/likes.js"
+const authRoutes = require("./routes/auth.js")
+const userRoutes = require ("./routes/users.js")
+const postRoutes = require ("./routes/posts.js")
+const commentRoutes = require ("./routes/comments.js")
+const likeRoutes = require ("./routes/likes.js")
 
 //미들웨어
 app.use(express.json)
 
-const router = express.Router()
-router.get("/test", (req,res) => {
-    res.send("hello")
-})
+app.get("/hello", (req, res) => res.send("Hello"));
 
 
 
